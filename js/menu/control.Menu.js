@@ -55,6 +55,11 @@ function MenuController( $scope, $rootScope )
 
 		$( '.gamemode_list' ).hide();
 	}
+	
+	$scope.JoinGame = function( ip )
+	{
+		lua.Run( "JoinServer( \"" + ip + "\" )" )
+	}
 
 	$scope.SelectLanguage = function ( lang )
 	{

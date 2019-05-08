@@ -1,26 +1,34 @@
 
 	<div class="page" ng-controller="ControllerMain">
-	
+
 		<div class="options">
 
 			<ul>
-	
+
 				<li><img ng-src='../gamemodes/{{Gamemode}}/logo.png' /></li>
 				<li>&nbsp;</li>
 				<li ng-show="InGame"><a ng-click="BackToGame()" ng-Tranny="'resume_game'"></a></li>
 				<li ng-show="InGame">&nbsp;</li>
-				<li><a ng-href="#/newgame/"> Start a shit game.</a></li>
+				<li><a ng-href="#/newgame/" ng-Tranny="'new_game'"></a></li>
 
-				<li><a ng-href="#/servers/">multiplayer really?</a></li>
+				<li><a ng-href="#/servers/" ng-Tranny="'find_mp_game'"></a></li>
 
 				<li>&nbsp;</li>
 				<li><a ng-href="#/addons/" ng-Tranny="'addons'"></a></li>
-				<!-- <li><a ng-href="#/demos/" ng-Tranny="'demos'"></a></li> -->
-				<!-- <li><a ng-href="#/saves/" ng-Tranny="'saves'"></a></li> -->
+				
+				<li>&nbsp;</li>
+				
+				<li><div class="dropdown">
+				  <a href="www.mysite.com" onclick="dropDown()" class="dropbtn">▼Quick Join▼</a>
+				  <div id="myDropdown" class="dropdown-content">
+					<a ng-click="JoinGame( 'play.zarpgaming.com')" ng-Tranny="'ZARP - S1'"></a><br>
+					<a ng-click="JoinGame( 'play.zarpgaming.com:27025')" ng-Tranny="'ZARP - S2'"></a><br>
+					<a ng-click="JoinGame( 'usa.zarpgaming.com')" ng-Tranny="'ZARP - S3'"></a><br>
+				  </div>
+				</div></li>
 
 				<li>&nbsp;</li>
 				<li><a ng-click="MenuOption( this, 'OpenOptionsDialog')" ng-Tranny="'options'"></a></li>
-
 				<li ng-show="InGame">
 					<a ng-click="MenuOption( this, 'engine disconnect');" ng-Tranny="'disconnect'"></a>
 				</li>
@@ -28,6 +36,18 @@
 
 			</ul>
 
+		</div>
+
+		<div class='news' ng-hide="NewsList.length == 0">
+			<div class="news_item" style="{{NewsItemBackground( CurrentNewsItem.HeaderImage )}}">
+				<div>
+					<span ng-click="OpenInSteam( CurrentNewsItem.Url )">{{CurrentNewsItem.Title}}</span>
+					<font>{{CurrentNewsItem.SummaryHtml}}</font>
+				</div>
+			</div>
+			<div class='news_buttons'>
+				<div class="{{IfElse( NewsItem.Url == CurrentNewsItem.Url, 'selected', '' )}}" ng-repeat="NewsItem in NewsList | orderBy: 'Date'" ng-click="SelectItem(NewsItem)"></div>
+			</div>
 		</div>
 
 	</div>

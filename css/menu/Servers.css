@@ -20,12 +20,12 @@
 	position: relative;
 	height: 34px;
 	overflow: hidden;
-	color: #888;
+	color: #b7b7b7;
 }
 
 .gamemode:hover
 {
-	background-image: -webkit-linear-gradient(bottom, rgb(250,230,150) 1%, rgb(250,250,150) 99%);
+	background-color: #20282f;
 }
 
 .gamemode .name
@@ -36,7 +36,7 @@
 	top: 5px;
 	font-size: 20px;
 	white-space: nowrap;
-	color: #888;
+	color: #b7b7b7;
 }
 
 .gamemode .stats
@@ -47,7 +47,7 @@
 	position: absolute;
 	bottom: 3px;
 	left: 43px;
-	color: #888;
+	color: #b7b7b7;
 }
 
 .gamemode IMG
@@ -62,7 +62,7 @@
 
 H1 small
 {
-	color: #888;
+	color: #b7b7b7;
 	font-size: 50%;
 	font-weight: normal;
 	padding-left: 8px;
@@ -421,3 +421,4 @@ SPAN.installgamemode:hover
 {
 	opacity: 0.4;
 }
+'+

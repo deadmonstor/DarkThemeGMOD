@@ -4,6 +4,19 @@ var IS_SPAWN_MENU = false
 
 var App = angular.module( 'MenuApp', [ 'tranny', 'ui' ] );
 
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+dropDown = function() {
+	
+	var i = document.getElementById("myDropdown");
+	if (i.className == "show"){
+		i.className = "hide";
+	}else{
+		i.className = "show";
+	}	
+}
+
+
 App.config(function ( $routeProvider, $locationProvider )
 {
 	$routeProvider.when('/', { templateUrl: 'template/main.html' } );

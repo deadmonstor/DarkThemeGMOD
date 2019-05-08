@@ -9,7 +9,6 @@ angular.module( 'tranny', [] )
 
 		var update = function()
 		{
-			
 			if ( IN_ENGINE )
 			{
 				var outStr_old = language.Update( strName, function( outStr )
